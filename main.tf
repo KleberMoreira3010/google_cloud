@@ -1,4 +1,4 @@
-resource "google_storage_bucket" "gcd_bucket" {
+resource "google_storage_bucket" "gcs_bucket" {
   name = "test-bucket-random-00191"
 }
 
