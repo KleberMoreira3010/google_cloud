@@ -1,4 +1,4 @@
-resource "google_storage_bucket" "default" {
+resource "google_storage_bucket" "gcs_bucket" {
     name = "test-bucket-random-1234"  
     location = var.region 
     
