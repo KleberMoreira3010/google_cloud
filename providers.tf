@@ -1,13 +1,7 @@
 provider "google" {
   project = var.project_id
   region  = var.region
-  features {
-        key_vault {
-            purge_soft_delete_on_destroy = false
-        }
-    }
-}
-
+  
 
 terraform {
   backend "gcs" {
@@ -21,4 +15,11 @@ terraform {
       version = "3.67.0"
     }
   }
+}
+
+features {
+        key_vault {
+            purge_soft_delete_on_destroy = false
+        }
+    }
 }
