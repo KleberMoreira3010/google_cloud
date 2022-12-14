@@ -1,13 +1,20 @@
 provider "google" {
   project = var.project_id
   region  = var.region
+  features {
+        key_vault {
+            purge_soft_delete_on_destroy = false
+        }
+    }
 }
+
 
 terraform {
   backend "gcs" {
     bucket = "stack-state-gcs-data-pipeline6875"
     prefix = "terraform/state"
   }
+  
   required_providers {
     google = {
       source  = "hashicorp/google"
